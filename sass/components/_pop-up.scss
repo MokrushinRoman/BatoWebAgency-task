@@ -1,0 +1,48 @@
+.pop-up {
+   background-color: #ffffff;
+   border-radius: 10px;
+
+   overflow: hidden;
+   transition: all var(--transition);
+
+   &.visually-hidden {
+   }
+
+  
+}
+
+.pop-up__list {
+   border-radius: 10px;
+}
+
+.pop-up__item {
+   padding-inline: 40px;
+
+   & + .pop-up__item div {
+      border-top: 1px solid var(--primary-color);
+   }
+   & div {
+      padding-top: 15px;
+      padding-bottom: 15px;
+   }
+
+   &:first-child {
+      padding-top: 10px;
+   }
+   &:last-child {
+      padding-bottom: 10px;
+   }
+
+   &:hover,
+   &:focus {
+      background-color: var(--accent-color);
+   }
+}
+.pop-up__text {
+   @include font(400, 18px, calc(22 / 18));
+
+   .pop-up__item:hover &,
+   .pop-up__item:focus & {
+      font-weight: 700;
+   }
+}

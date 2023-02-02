@@ -1,7 +1,14 @@
 .faq {
 }
 
+.faq__title {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
 .faq__list {
+    margin: 15px auto 0;
+    max-width: 350px;
 }
 
 .faq__item {
