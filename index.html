@@ -11,6 +11,13 @@
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;500;600&family=Readex+Pro:wght@400;600;700&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.1/swiper-bundle.min.css"
+            integrity="sha512-DtCuE8ZhRgWINxaM8JdgbBfNw8WQdEfjsnGCMWHK4AOjiCEQ6VPzyEmGmMUBfbCrk/zpu2c3V5khJ+05XK5M6w=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="./css/index.css" />
     </head>
     <body>
@@ -67,7 +74,7 @@
                 <div class="container">
                     <h2 class="title">Testimonials</h2>
                     <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
-                    <ul class="testimonials__list">
+                    <!-- <ul class="testimonials__list">
                         <li class="testimonials__item">
                             <div class="testimonials__box border-box">
                                 <p class="testimonials__description text">
@@ -87,9 +94,131 @@
                                 </div>
                             </div>
                         </li>
+                    </ul> -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonials__box border-box">
+                                    <p class="testimonials__description text">
+                                        Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem accusantium doloremque laudantium.
+                                    </p>
+                                    <div class="user-description">
+                                        <img
+                                            class="user__photo"
+                                            src="images/desktop/avatar-1-2x.jpg"
+                                            alt="Person photo"
+                                        />
+                                        <div>
+                                            <b class="user__name">Robert Johnson</b>
+                                            <p class="user__position">Graphic Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonials__box border-box">
+                                    <p class="testimonials__description text">
+                                        Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem accusantium doloremque laudantium.
+                                    </p>
+                                    <div class="user-description">
+                                        <img
+                                            class="user__photo"
+                                            src="images/desktop/avatar-2-2x.jpg"
+                                            alt="Person photo"
+                                        />
+                                        <div>
+                                            <b class="user__name">Robert Johnson</b>
+                                            <p class="user__position">Graphic Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonials__box border-box">
+                                    <p class="testimonials__description text">
+                                        Sed ut perspiciatis unde omnis iste natus error sit
+                                        voluptatem accusantium doloremque laudantium.
+                                    </p>
+                                    <div class="user-description">
+                                        <img
+                                            class="user__photo"
+                                            src="images/desktop/avatar-3-2x.jpg"
+                                            alt="Person photo"
+                                        />
+                                        <div>
+                                            <b class="user__name">Robert Johnson</b>
+                                            <p class="user__position">Graphic Designer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq section">
+                <div class="container">
+                    <ul class="faq__list">
+                        <li class="faq__item closed box">
+                            <h3 class="faq__subtitle text">
+                                Sed ut perspiciatis unde omnis iste natus ?
+                            </h3>
+                            <svg class="faq__icon" width="14" height="14">
+                                <use href="./images/sprites/icons.svg#icon-close"></use>
+                            </svg>
+                        </li>
+                        <li class="faq__item closed box">
+                            <h3 class="faq__subtitle text">
+                                Sed ut perspiciatis unde omnis iste natus ?
+                            </h3>
+                            <svg class="faq__icon" width="14" height="14">
+                                <use href="./images/sprites/icons.svg#icon-close"></use>
+                            </svg>
+                        </li>
+                        <li class="faq__item closed box">
+                            <h3 class="faq__subtitle text">
+                                Sed ut perspiciatis unde omnis iste natus ?
+                            </h3>
+                            <svg class="faq__icon" width="14" height="14">
+                                <use href="./images/sprites/icons.svg#icon-close"></use>
+                            </svg>
+                        </li>
                     </ul>
                 </div>
             </section>
         </main>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.0.1/swiper-bundle.min.js"
+            integrity="sha512-Wel1xvgWR7Ua+NQ67DaGBoYU1erKDkaW8RNEgo8z2eKzvJKhacCWMVvrLbZ4uQY+b8c07xk+qwv1jWOQRYDOZg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="./js/swiper.js" type="module"></script>
+        <script src="./js/index.js" type="module"></script>
+        <script>
+            const swiper = new Swiper('.swiper', {
+                spaceBetween: 30,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                mousewhell: true,
+                keyboard: true,
+            });
+
+            swiper.slideNext();
+        </script>
     </body>
 </html>

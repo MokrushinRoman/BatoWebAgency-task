@@ -1,0 +1,30 @@
+.faq {
+}
+
+.faq__list {
+}
+
+.faq__item {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    & + .faq__item {
+        margin-top: 8px;
+    }
+}
+
+.faq__subtitle {
+    color: #ffffff;
+}
+
+.faq__icon {
+    fill: #ffffff;
+    transform: rotate(45deg);
+}
+
+.closed {
+}

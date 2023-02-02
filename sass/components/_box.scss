@@ -1,5 +1,5 @@
 .box {
-    background: linear-gradient(var(--gradient));
+    background: linear-gradient(var(--box-gradient));
     border-radius: 15px;
 
     &--shadow {
@@ -21,7 +21,7 @@
         bottom: -2px;
         left: -2px;
         right: -2px;
-        background: linear-gradient(var(--gradient));
+        background: linear-gradient(var(--border-box-gradient));
         border-radius: 15px;
         z-index: -1;
     }

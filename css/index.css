@@ -329,7 +329,9 @@ address {
 
 :root {
   --primary-color: #e75624;
-  --gradient: 90.87deg, rgba(255, 104, 1, 0.8) 0.72%, rgba(255, 32, 1, 0.8) 99.25%;
+  --hero-gradient: 90.87deg, #ff6801cc 0.72%, #ff2001cc 99.25%;
+  --box-gradient: 90deg, #ff6800 0%, #ff1f00 100%;
+  --border-box-gradient: 90deg, #ff6800 100%, #ff1f00 100%;
   --accent-color: #f7cf0d;
   --navigation-color: #212121;
   --title-color: #000000;
@@ -339,8 +341,8 @@ address {
 }
 
 .box {
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--gradient)));
-  background: linear-gradient(var(--gradient));
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--box-gradient)));
+  background: linear-gradient(var(--box-gradient));
   border-radius: 15px;
 }
 .box--shadow {
@@ -361,8 +363,8 @@ address {
   bottom: -2px;
   left: -2px;
   right: -2px;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--gradient)));
-  background: linear-gradient(var(--gradient));
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--border-box-gradient)));
+  background: linear-gradient(var(--border-box-gradient));
   border-radius: 15px;
   z-index: -1;
 }
@@ -474,6 +476,30 @@ address {
     padding-top: 60px;
     padding-bottom: 60px;
   }
+}
+
+.faq__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+}
+.faq__item + .faq__item {
+  margin-top: 8px;
+}
+
+.faq__subtitle {
+  color: #ffffff;
+}
+
+.faq__icon {
+  fill: #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .header {
@@ -596,28 +622,28 @@ address {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 197px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient))), url(../images/mob/hero-mob.jpg);
-  background-image: linear-gradient(var(--gradient)), url(../images/mob/hero-mob.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--hero-gradient))), url(../images/mob/hero-mob.jpg);
+  background-image: linear-gradient(var(--hero-gradient)), url(../images/mob/hero-mob.jpg);
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
     min-height: 197px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient))), url(../images/mob/hero-mob-2x.jpg);
-    background-image: linear-gradient(var(--gradient)), url(../images/mob/hero-mob-2x.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--hero-gradient))), url(../images/mob/hero-mob-2x.jpg);
+    background-image: linear-gradient(var(--hero-gradient)), url(../images/mob/hero-mob-2x.jpg);
   }
 }
 @media screen and (min-width: 768px) {
   .hero {
     min-height: 421px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient))), url(../images/desktop/hero.jpg);
-    background-image: linear-gradient(var(--gradient)), url(../images/desktop/hero.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--hero-gradient))), url(../images/desktop/hero.jpg);
+    background-image: linear-gradient(var(--hero-gradient)), url(../images/desktop/hero.jpg);
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
     min-height: 421px;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient))), url(../images/desktop/hero-2x.jpg);
-    background-image: linear-gradient(var(--gradient)), url(../images/desktop/hero-2x.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--hero-gradient))), url(../images/desktop/hero-2x.jpg);
+    background-image: linear-gradient(var(--hero-gradient)), url(../images/desktop/hero-2x.jpg);
   }
 }
 
@@ -644,8 +670,8 @@ address {
   line-height: 3.3580387685;
 }
 .hero__button-text {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--gradient)));
-  background-image: linear-gradient(var(--gradient));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--box-gradient)));
+  background-image: linear-gradient(var(--box-gradient));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -655,18 +681,54 @@ address {
   margin-top: 30px;
 }
 
+.testimonials__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
 .testimonials__description {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .user-description {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .user__photo {
-  width: 60px;
-  height: 60px;
+  margin-right: 9px;
+  width: 42px;
+  height: 42px;
+}
+
+.user__name {
+  margin-bottom: 9px;
+  color: #333333;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.user__position {
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 0.7272727273;
 }/*# sourceMappingURL=index.css.map */

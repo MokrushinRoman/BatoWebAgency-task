@@ -5,22 +5,37 @@
 .testimonials__item {
 }
 
+.testimonials__box {
+    @include flex-centred();
+    flex-direction: column;
+
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 .testimonials__description {
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .user-description {
     display: flex;
-    margin: 0 auto;
+    align-items: center;
 }
 
 .user__photo {
-    width: 60px;
-    height: 60px;
+    margin-right: 9px;
+    width: 42px;
+    height: 42px;
 }
 
 .user__name {
+    margin-bottom: 9px;
+
+    color: #333333;
+    @include font(600, 11px, calc(11 / 11));
 }
 
 .user__position {
+    @include font(300, 11px, calc(8 / 11));
 }
