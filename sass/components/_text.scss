@@ -1,0 +1,38 @@
+.title {
+    @include font(600, 26px, calc(28 / 26));
+    text-align: center;
+    color: #000000;
+
+    @media screen and (min-width: 768px) {
+        @include font(600, 32px, calc(42 / 32));
+    }
+}
+
+.primary-title {
+    @include font(600, 9px, calc(29 / 9));
+    text-align: center;
+    color: #ffffff;
+
+    @media screen and (min-width: 768px) {
+        @include font(600, 32px, calc(44 / 32));
+    }
+}
+
+.top-text {
+    text-align: center;
+    color: #999999;
+
+    @include font(400, 11px, calc(16 / 11));
+
+    @media screen and (min-width: 768px) {
+        @include font(400, 14px, calc(24 / 14));
+    }
+}
+
+.text {
+    @include font(400, 11px, calc(15 / 11));
+
+    @media screen and (min-width: 768px) {
+        @include font(400, 14px, calc(24 / 14));
+    }
+}

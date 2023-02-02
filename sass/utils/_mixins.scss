@@ -1,0 +1,25 @@
+@mixin flex-centred($d: flex, $ai: center, $jc: center) {
+    display: $d;
+    align-items: $ai;
+    justify-content: $jc;
+}
+
+@mixin position($pos: absolute, $t: 0, $l: 0) {
+    position: $pos;
+    top: $t;
+    left: $l;
+}
+
+@mixin retina {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin font($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}

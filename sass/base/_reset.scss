@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #808080;
+    margin: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+header {
+    font-family: 'Readex Pro', sans-serif;
+    color: var(--primary-color);
+}
+
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a,
+label,
+span,
+b {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+address {
+    font-style: normal;
+}

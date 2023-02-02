@@ -1,0 +1,17 @@
+.button {
+    border: 1px solid #e75624;
+    border-radius: 100px;
+    background-color: #e75624;
+
+    &--white {
+        background-color: #ffffff;
+    }
+
+    @media screen and (min-width: 320px) {
+        padding: 9.5px 5px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 13px 20px;
+    }
+}

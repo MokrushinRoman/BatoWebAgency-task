@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;500;600&family=Readex+Pro:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="container header-container">
+                <a class="logo" href="./index.html">
+                    <img src="./images/mob/logo-mob.png" alt="Company logo" />
+                </a>
+                <nav class="site-nav">
+                    <!-- <ul class="site-nav__list">
+                        <li class="site-nav__item">
+                            <a href="" class="site-nav__link">Nous découvrir</a>
+                        </li>
+
+                        <li class="site-nav__item">
+                            <a href="" class="site-nav__link">Nos activités</a>
+                        </li>
+
+                        <li class="site-nav__item">
+                            <a href="" class="site-nav__link">Nos actualités</a>
+                        </li>
+
+                        <li class="site-nav__item">
+                            <a href="" class="site-nav__link">Nos adresses</a>
+                        </li>
+
+                        <li class="site-nav__item">
+                            <a href="" class="site-nav__link">Postuler</a>
+                        </li>
+                    </ul> -->
+
+                    <button class="menu-burger">
+                        <span></span>
+                    </button>
+
+                    <a href="" class="contact button">
+                        <svg class="contact__icon" width="14" height="14">
+                            <use href="./images/sprites/icons.svg#icon-phone"></use>
+                        </svg>
+                        <p class="contact__text">0596 76 38 18</p>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="hero__title primary-title">Grow Your Company Faster Than Ever Before</h1>
+                <button class="hero__button">
+                    <p class="hero__button-text">Contast Us</p>
+                </button>
+            </section>
+
+            <section class="section testimonials">
+                <div class="container">
+                    <h2 class="title">Testimonials</h2>
+                    <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
+                    <ul class="testimonials__list">
+                        <li class="testimonials__item">
+                            <div class="testimonials__box border-box">
+                                <p class="testimonials__description text">
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium.
+                                </p>
+                                <div class="user-description">
+                                    <img
+                                        class="user__photo"
+                                        src="images/desktop/avatar-2-2x.jpg"
+                                        alt="Person photo"
+                                    />
+                                    <div>
+                                        <b class="user__name">Robert Johnson</b>
+                                        <p class="user__position">Graphic Designer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
