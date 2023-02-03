@@ -406,6 +406,7 @@ address {
   -webkit-transition: all var(--transition);
   transition: all var(--transition);
 }
+
 .pop-up__list {
   border-radius: 10px;
 }
@@ -673,7 +674,7 @@ address {
 }
 
 .menu-burger {
-  z-index: 5;
+  z-index: 10;
   position: absolute;
   top: 15px;
   left: 12px;
