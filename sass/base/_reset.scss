@@ -7,8 +7,7 @@ body {
     color: #808080;
     margin: 0;
 }
-
-body.modal-open {
+body.modal-open,body.menu-open {
     overflow: hidden;
 }
 

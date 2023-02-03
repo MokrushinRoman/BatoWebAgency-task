@@ -48,7 +48,7 @@
                         </li>
                     </ul> -->
 
-               <button class="menu-burger">
+               <button class="menu-burger" type="button">
                   <span></span>
                </button>
 
@@ -65,8 +65,8 @@
       <main>
          <section class="hero">
             <h1 class="hero__title primary-title">Grow Your Company Faster Than Ever Before</h1>
-            <button class="hero__button" type="button">
-               <b class="hero__button-text">Contast Us</b>
+            <button class="hero__button" type="button" data-modal-open>
+               <span class="hero__button-text">Contast Us</span>
             </button>
          </section>
 
@@ -145,26 +145,62 @@
 
          <section class="faq section">
             <div class="container">
-               <h2 class="faq__title title">Frequently Asked Question</h2>
+               <h2 class="faq__section-title title">Frequently Asked Question</h2>
                <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
                <ul class="faq__list">
                   <li class="faq__item closed box">
-                     <h3 class="faq__subtitle text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-                     <svg class="faq__icon" width="14" height="14">
-                        <use href="./images/sprites/icons.svg#icon-close"></use>
-                     </svg>
+                     <div>
+                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
+
+                        <b class="faq__subtitle text visually-hidden">
+                           Temporibus autem quibusdam et aut ?
+                        </b>
+                        <p class="faq__answer text visually-hidden">
+                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                           praesentium voluptatum deleniti atque.
+                        </p>
+                     </div>
+                     <button class="faq__button" type="button">
+                        <svg class="faq__icon" width="14" height="14">
+                           <use href="./images/sprites/icons.svg#icon-close"></use>
+                        </svg>
+                     </button>
                   </li>
                   <li class="faq__item closed box">
-                     <h3 class="faq__subtitle text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-                     <svg class="faq__icon" width="14" height="14">
-                        <use href="./images/sprites/icons.svg#icon-close"></use>
-                     </svg>
+                     <div>
+                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
+
+                        <b class="faq__subtitle text visually-hidden">
+                           Temporibus autem quibusdam et aut ?
+                        </b>
+                        <p class="faq__answer text visually-hidden">
+                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                           praesentium voluptatum deleniti atque.
+                        </p>
+                     </div>
+                     <button class="faq__button" type="button">
+                        <svg class="faq__icon" width="14" height="14">
+                           <use href="./images/sprites/icons.svg#icon-close"></use>
+                        </svg>
+                     </button>
                   </li>
                   <li class="faq__item closed box">
-                     <h3 class="faq__subtitle text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-                     <svg class="faq__icon" width="14" height="14">
-                        <use href="./images/sprites/icons.svg#icon-close"></use>
-                     </svg>
+                     <div>
+                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
+
+                        <b class="faq__subtitle text visually-hidden">
+                           Temporibus autem quibusdam et aut ?
+                        </b>
+                        <p class="faq__answer text visually-hidden">
+                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                           praesentium voluptatum deleniti atque.
+                        </p>
+                     </div>
+                     <button class="faq__button" type="button">
+                        <svg class="faq__icon" width="14" height="14">
+                           <use href="./images/sprites/icons.svg#icon-close"></use>
+                        </svg>
+                     </button>
                   </li>
                </ul>
             </div>
@@ -183,31 +219,31 @@
                         <ul class="pop-up__list">
                            <li class="pop-up__item">
                               <div>
-                                 <p class="pop-up__text">Ressourceries</p>
+                                 <b class="pop-up__text">Ressourceries</b>
                               </div>
                            </li>
 
                            <li class="pop-up__item">
                               <div>
-                                 <p class="pop-up__text">Borne de collecte</p>
+                                 <b class="pop-up__text">Borne de collecte</b>
                               </div>
                            </li>
 
                            <li class="pop-up__item">
                               <div>
-                                 <p class="pop-up__text">Valorisation textile</p>
+                                 <b class="pop-up__text">Valorisation textile</b>
                               </div>
                            </li>
 
                            <li class="pop-up__item">
                               <div>
-                                 <p class="pop-up__text">Nos boutiks</p>
+                                 <b class="pop-up__text">Nos boutiks</b>
                               </div>
                            </li>
 
                            <li class="pop-up__item">
                               <div>
-                                 <p class="pop-up__text">Nos formations</p>
+                                 <b class="pop-up__text">Nos formations</b>
                               </div>
                            </li>
                         </ul>
@@ -224,6 +260,66 @@
                   </li>
                </ul>
             </nav>
+         </div>
+
+         <!-- Modal -->
+
+         <div class="backdrop is-hidden" data-modal data-backdrop>
+            <div class="modal">
+               <h2 class="modal__title">Contact Us</h2>
+
+               <form action="" class="modal__form">
+                  <button class="close-button" type="button" data-modal-close>
+                     <svg class="close-icon">
+                        <use href="./images/sprites/icons.svg#icon-close"></use>
+                     </svg>
+                  </button>
+
+                  <label class="form__label">
+                     <input type="text" class="form__input text" placeholder="First Name" />
+                  </label>
+
+                  <label class="form__label">
+                     <input type="text" class="form__input text" placeholder="Last Name" />
+                  </label>
+
+                  <label class="form__label">
+                     <input type="email" class="form__input text" placeholder="Your email" />
+                  </label>
+
+                  <label class="form__label">
+                     <input
+                        type="text"
+                        class="form__input text"
+                        placeholder="Company name (optional)"
+                     />
+                  </label>
+
+                  <label class="form__label">
+                     <input type="text" class="form__input text" placeholder="Enqiry" />
+                  </label>
+
+                  <label class="form__label-checkbox form__label" for="policy">
+                     <div class="checkbox-wraper">
+                        <input
+                           class="form__checkbox visually-hidden"
+                           type="checkbox"
+                           name="policy"
+                           id="policy"
+                        />
+                        <svg class="check-icon">
+                           <use href="./images/sprites/icons.svg#icon-checkbox"></use>
+                        </svg>
+                     </div>
+                     <span>
+                        I agree to the <a class="checkbox-link" href="/"> Terms of Use </a> and
+                        <a class="checkbox-link" href="/">Privacy Policy</a>
+                     </span>
+                  </label>
+
+                  <button class="form__button" type="submit">Send</button>
+               </form>
+            </div>
          </div>
       </main>
 

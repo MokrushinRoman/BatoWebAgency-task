@@ -1,9 +1,15 @@
 .pop-up {
    background-color: #ffffff;
    border-radius: 10px;
+   
 
    overflow: hidden;
    transition: all var(--transition);
+   transform: scale(1);
+
+   &.visually-hidden {
+      transform: scale(0);
+   }
 }
 
 .pop-up__list {
@@ -16,10 +22,7 @@
    & + .pop-up__item div {
       border-top: 1px solid var(--primary-color);
    }
-   & div {
-      padding-top: 15px;
-      padding-bottom: 15px;
-   }
+   
 
    &:first-child {
       padding-top: 10px;
@@ -34,6 +37,8 @@
    }
 }
 .pop-up__text {
+   padding-top: 15px;
+      padding-bottom: 15px;
    @include font(400, 18px, calc(22 / 18));
 
    .pop-up__item:hover &,

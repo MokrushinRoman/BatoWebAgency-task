@@ -1,7 +1,7 @@
 .mob-menu {
    z-index: 5;
    @include position($pos: fixed, $t: 52px, $l: 0);
-   transform-origin: bottom left;
+   transform-origin: top center;
    transform: translate(0) scale(1);
    overflow: scroll;
 
@@ -17,8 +17,9 @@
       0px 1px 3px rgba(0, 0, 0, 0.16);
 
    transition: transform var(--transition);
+   transform: translate(0) scale(1);
 
-   &.is-hidden {
+   &.visually-hidden {
       transform: translate(0) scale(0);
    }
 }
@@ -42,8 +43,11 @@
 
 .mob-menu__text {
    @include font(600, 20px, calc(25 / 20));
+   transition: all var(--transition);
 
    &.active {
+      padding-bottom: 10px;
+      transform: scale(1.05);
       color: var(--accent-color);
    }
 }

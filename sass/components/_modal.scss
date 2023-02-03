@@ -1,0 +1,172 @@
+.backdrop {
+   z-index: 20;
+   @include position($pos: fixed, $t: 0, $l: 0);
+   overflow-y: scroll;
+
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
+
+   transition: visibility var(--transition), opacity var(--transition);
+}
+
+.modal {
+   @include position($t: 50%, $l: 50%);
+
+   padding: 15px 25px;
+
+   color: #ffffff;
+   background-color: #01040d;
+   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
+   border-radius: 4px;
+
+   transition: transform var(--transition) 200ms;
+
+   font-family: 'Montserrat', sans-serif;
+   text-align: center;
+
+   @media screen and (min-width: 320px) {
+      transform: translate(-50%, -50%);
+
+      max-width: 450px;
+      width: calc(100% - 30px);
+
+      .backdrop.is-hidden & {
+         transform: translate(-50%, -50%) scale(0);
+      }
+   }
+
+   @media screen and (min-width: 768px) {
+      transform: translate(-50%, -50%) scale(1);
+
+      max-width: 530px;
+      width: 100%;
+
+      .backdrop.is-hidden & {
+         transform: translate(-50%, -50%) scale(0);
+      }
+   }
+}
+
+.modal__title {
+   @include font(800, 31px, 1.5);
+
+   text-transform: uppercase;
+
+   @media screen and (min-width: 768px) {
+      @include font(800, 50px, calc(75 / 50));
+   }
+}
+
+.close-button {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+
+   border: none;
+   background-color: transparent;
+}
+
+.close-icon {
+   width: 20px;
+   height: 20px;
+
+   fill: #ffffff;
+}
+
+.modal__form {
+   margin-top: 15px;
+   width: 100%;
+}
+
+.form__label {
+   & + .form__label {
+      margin-top: 25px;
+   }
+}
+
+.form__input {
+   width: 100%;
+   padding: 5px 7px;
+   outline: none;
+   color: #ffffff;
+
+   background-color: transparent;
+   border: none;
+   border-bottom: 1px solid #d6d8e7;
+
+   &::placeholder {
+      @include font(400, 12px, cals(20/12));
+      color: #ffffff;
+   }
+}
+
+.check-icon {
+   position: absolute;
+   left: 3px;
+   top: 3px;
+   display: none;
+
+   width: 12px;
+   height: 12px;
+
+   fill: #ffffff;
+
+   .form__checkbox:checked + & {
+      display: block;
+   }
+}
+
+.form__label-checkbox {
+   display: flex;
+   align-items: center;
+   width: 100%;
+
+   @include font(400, 12px, calc(15 / 12));
+
+   & span {
+      width: 100%;
+      text-align: left;
+   }
+}
+
+.checkbox-wraper {
+   position: relative;
+   min-width: 20px;
+   height: 20px;
+   margin-right: 7px;
+
+   border: 1px solid #ffffff;
+   border-radius: 2px;
+}
+
+.form__checkbox {
+   width: 20px;
+   height: 20px;
+   outline: none;
+
+   background-color: transparent;
+}
+
+.checkbox-link {
+   font-weight: 600;
+   display: inline-block;
+
+   text-decoration: underline;
+}
+
+.form__button {
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-top: 30px;
+   width: 100%;
+
+   border: 0.1px solid #ffffff;
+   border-radius: 3px;
+
+   background-color: inherit;
+   color: inherit;
+
+   @include font(600, 20px, calc(23 / 20));
+}

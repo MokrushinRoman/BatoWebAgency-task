@@ -252,7 +252,7 @@ body {
   margin: 0;
 }
 
-body.modal-open {
+body.modal-open, body.menu-open {
   overflow: hidden;
 }
 
@@ -345,8 +345,8 @@ address {
   position: fixed;
   top: 52px;
   left: 0;
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
   -webkit-transform: translate(0) scale(1);
           transform: translate(0) scale(1);
   overflow: scroll;
@@ -368,8 +368,9 @@ address {
   transition: -webkit-transform var(--transition);
   transition: transform var(--transition);
   transition: transform var(--transition), -webkit-transform var(--transition);
+  transform: translate(0) scale(1);
 }
-.mob-menu.is-hidden {
+.mob-menu.visually-hidden {
   -webkit-transform: translate(0) scale(0);
           transform: translate(0) scale(0);
 }
@@ -394,9 +395,212 @@ address {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.25;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
 }
 .mob-menu__text.active {
+  padding-bottom: 10px;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   color: var(--accent-color);
+}
+
+.backdrop {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: visibility var(--transition), opacity var(--transition);
+  transition: visibility var(--transition), opacity var(--transition);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 15px 25px;
+  color: #ffffff;
+  background-color: #01040d;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  -webkit-transition: -webkit-transform var(--transition) 200ms;
+  transition: -webkit-transform var(--transition) 200ms;
+  transition: transform var(--transition) 200ms;
+  transition: transform var(--transition) 200ms, -webkit-transform var(--transition) 200ms;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+@media screen and (min-width: 320px) {
+  .modal {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width: 450px;
+    width: calc(100% - 30px);
+  }
+  .backdrop.is-hidden .modal {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    max-width: 530px;
+    width: 100%;
+  }
+  .backdrop.is-hidden .modal {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.modal__title {
+  font-weight: 800;
+  font-size: 31px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .modal__title {
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 1.5;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.close-icon {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.modal__form {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.form__label + .form__label {
+  margin-top: 25px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 5px 7px;
+  outline: none;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #d6d8e7;
+}
+.form__input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: cals(20/12);
+  color: #ffffff;
+}
+.form__input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: cals(20/12);
+  color: #ffffff;
+}
+.form__input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: cals(20/12);
+  color: #ffffff;
+}
+.form__input::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: cals(20/12);
+  color: #ffffff;
+}
+.form__input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: cals(20/12);
+  color: #ffffff;
+}
+
+.check-icon {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  display: none;
+  width: 12px;
+  height: 12px;
+  fill: #ffffff;
+}
+.form__checkbox:checked + .check-icon {
+  display: block;
+}
+
+.form__label-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.25;
+}
+.form__label-checkbox span {
+  width: 100%;
+  text-align: left;
+}
+
+.checkbox-wraper {
+  position: relative;
+  min-width: 20px;
+  height: 20px;
+  margin-right: 7px;
+  border: 1px solid #ffffff;
+  border-radius: 2px;
+}
+
+.form__checkbox {
+  width: 20px;
+  height: 20px;
+  outline: none;
+  background-color: transparent;
+}
+
+.checkbox-link {
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: underline;
+}
+
+.form__button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  width: 100%;
+  border: 0.1px solid #ffffff;
+  border-radius: 3px;
+  background-color: inherit;
+  color: inherit;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.15;
 }
 
 .pop-up {
@@ -405,6 +609,12 @@ address {
   overflow: hidden;
   -webkit-transition: all var(--transition);
   transition: all var(--transition);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.pop-up.visually-hidden {
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .pop-up__list {
@@ -417,10 +627,6 @@ address {
 .pop-up__item + .pop-up__item div {
   border-top: 1px solid var(--primary-color);
 }
-.pop-up__item div {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
 .pop-up__item:first-child {
   padding-top: 10px;
 }
@@ -432,6 +638,8 @@ address {
 }
 
 .pop-up__text {
+  padding-top: 15px;
+  padding-bottom: 15px;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.2222222222;
@@ -444,6 +652,8 @@ address {
   background: -webkit-gradient(linear, left top, left bottom, from(var(--box-gradient)));
   background: linear-gradient(var(--box-gradient));
   border-radius: 15px;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
 }
 .box--shadow {
   -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
@@ -454,6 +664,8 @@ address {
   position: relative;
   background: #fff;
   border-radius: 15px;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
 }
 .border-box::before {
   content: "";
@@ -606,7 +818,7 @@ address {
   background: linear-gradient(var(--box-gradient));
 }
 
-.faq__title {
+.faq__section-title {
   max-width: 350px;
   margin: 0 auto;
 }
@@ -624,20 +836,58 @@ address {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 13px;
 }
 .faq__item + .faq__item {
   margin-top: 8px;
 }
+.faq__item > div {
+  margin-right: 30px;
+}
+
+.faq__title {
+  color: #ffffff;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
+}
 
 .faq__subtitle {
-  color: #ffffff;
+  color: #333333;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
+}
+
+.faq__answer {
+  margin-top: 10px;
+  color: #808080;
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
+}
+
+.faq__button {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border: none;
 }
 
 .faq__icon {
+  position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  top: 10%;
+  left: 0%;
+  fill: #000000;
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transition: all var(--transition);
+  transition: all var(--transition);
+}
+.faq__item.closed .faq__icon {
   fill: #ffffff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
 }
 
 .header {
@@ -659,7 +909,7 @@ address {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-right: 0;
-  padding-left: 40px;
+  padding-left: 60px;
 }
 
 .logo {
