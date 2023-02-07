@@ -1,48 +1,71 @@
 .testimonials {
-    padding-bottom: 0;
+   padding-bottom: 0;
 }
 
 .testimonials__list {
-    margin-top: 25px;
+   margin-top: 25px;
 }
 
 .testimonials__item {
 }
 
 .testimonials__box {
-    @include flex-centred();
-    flex-direction: column;
+   @include flex-centred();
+   flex-direction: column;
 
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 30px;
+   max-width: 300px;
+   margin: 0 auto;
+   padding: 30px;
 
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+
+   @media screen and (min-width: 768px) {
+      max-width: 385px;
+      padding: 40px;
+   }
 }
 
 .testimonials__description {
-    margin-bottom: 20px;
-    text-align: center;
+   margin-bottom: 20px;
+   text-align: center;
+
+   @media screen and (min-width: 768px) {
+      margin-bottom: 25px;
+   }
 }
 
 .user-description {
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 }
 
 .user__photo {
-    margin-right: 9px;
-    width: 42px;
-    height: 42px;
+   margin-right: 9px;
+   width: 42px;
+   height: 42px;
+
+   @media screen and (min-width: 768px) {
+      margin-right: 12px;
+      width: 55px;
+      height: 55px;
+   }
 }
 
 .user__name {
-    margin-bottom: 9px;
+   margin-bottom: 9px;
 
-    color: #333333;
-    @include font(600, 11px, calc(11 / 11));
+   color: #333333;
+   @include font(600, 11px, calc(11 / 11));
+
+   @media screen and (min-width: 768px) {
+      @include font(600, 14px, calc(14 / 14));
+   }
 }
 
 .user__position {
-    @include font(300, 11px, calc(8 / 11));
+   @include font(300, 11px, calc(8 / 11));
+
+   @media screen and (min-width: 768px) {
+      @include font(600, 10px, calc(10 / 10));
+   }
 }

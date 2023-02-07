@@ -23,30 +23,77 @@
    <body>
       <header class="header">
          <div class="container header-container">
-            <img class="logo" src="./images/desktop/logo-desktop.png" alt="Company logo" />
+            <picture>
+               <source
+                  srcset="
+                     ./images/desktop/logo-desktop.png    1x,
+                     ./images/desktop/logo-desktop-2x.png 2x
+                  "
+                  media="(min-width: 768px)"
+               />
+               <source
+                  srcset="./images/mob/logo.png 1x, ./images/mob/logo-2x.png 2x"
+                  media="(min-width: 320px)"
+               />
+
+               <img class="logo" src="./images/desktop/logo-desktop.png" alt="Company logo" />
+            </picture>
 
             <nav class="site-nav">
-               <!-- <ul class="site-nav__list">
-                        <li class="site-nav__item">
-                            <a href="" class="site-nav__link">Nous découvrir</a>
-                        </li>
+               <ul class="site-nav__list">
+                  <li class="site-nav__item">
+                     <a href="/" class="site-nav__link">Nous découvrir</a>
+                  </li>
 
-                        <li class="site-nav__item">
-                            <a href="" class="site-nav__link">Nos activités</a>
-                        </li>
+                  <li class="site-nav__item">
+                     <a href="/" class="site-nav__link">Nos activités</a>
+                     <div class="pop-up desk">
+                        <ul class="pop-up__list">
+                           <li class="pop-up__item">
+                              <div>
+                                 <b class="pop-up__text">Ressourceries</b>
+                              </div>
+                           </li>
 
-                        <li class="site-nav__item">
-                            <a href="" class="site-nav__link">Nos actualités</a>
-                        </li>
+                           <li class="pop-up__item">
+                              <div>
+                                 <b class="pop-up__text">Borne de collecte</b>
+                              </div>
+                           </li>
 
-                        <li class="site-nav__item">
-                            <a href="" class="site-nav__link">Nos adresses</a>
-                        </li>
+                           <li class="pop-up__item">
+                              <div>
+                                 <b class="pop-up__text">Valorisation textile</b>
+                              </div>
+                           </li>
 
-                        <li class="site-nav__item">
-                            <a href="" class="site-nav__link">Postuler</a>
-                        </li>
-                    </ul> -->
+                           <li class="pop-up__item">
+                              <div>
+                                 <b class="pop-up__text">Nos boutiks</b>
+                              </div>
+                           </li>
+
+                           <li class="pop-up__item">
+                              <div>
+                                 <b class="pop-up__text">Nos formations</b>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+
+                  <li class="site-nav__item">
+                     <a href="/" class="site-nav__link">Nos actualités</a>
+                  </li>
+
+                  <li class="site-nav__item">
+                     <a href="/" class="site-nav__link">Nos adresses</a>
+                  </li>
+
+                  <li class="site-nav__item">
+                     <a href="/" class="site-nav__link">Postuler</a>
+                  </li>
+               </ul>
 
                <button class="menu-burger" type="button">
                   <span></span>
@@ -63,149 +110,6 @@
       </header>
 
       <main>
-         <section class="hero">
-            <h1 class="hero__title primary-title">Grow Your Company Faster Than Ever Before</h1>
-            <button class="hero__button" type="button" data-modal-open>
-               <span class="hero__button-text">Contast Us</span>
-            </button>
-         </section>
-
-         <section class="section testimonials">
-            <div class="container">
-               <h2 class="title">Testimonials</h2>
-               <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
-               <div class="swiper">
-                  <ul class="swiper-wrapper testimonials__list">
-                     <li class="swiper-slide testimonials__item">
-                        <div class="testimonials__box border-box">
-                           <p class="testimonials__description text">
-                              Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum
-                              nulla sed consectetur.
-                           </p>
-                           <div class="user-description">
-                              <img
-                                 class="user__photo"
-                                 src="images/desktop/avatar-1-2x.jpg"
-                                 alt="Person photo"
-                              />
-                              <div>
-                                 <b class="user__name">Dianne Russell</b>
-                                 <p class="user__position">Marketing Coordinator</p>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="swiper-slide testimonials__item">
-                        <div class="testimonials__box border-box">
-                           <p class="testimonials__description text">
-                              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                              accusantium doloremque laudantium.
-                           </p>
-                           <div class="user-description">
-                              <img
-                                 class="user__photo"
-                                 src="images/desktop/avatar-2-2x.jpg"
-                                 alt="Person photo"
-                              />
-                              <div>
-                                 <b class="user__name">Robert Johnson</b>
-                                 <p class="user__position">Graphic Designer</p>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                     <li class="swiper-slide testimonials__item">
-                        <div class="testimonials__box border-box">
-                           <p class="testimonials__description text">
-                              Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
-                              risus, porta ac consectetur ac, vestibulum at eros.
-                           </p>
-                           <div class="user-description">
-                              <img
-                                 class="user__photo"
-                                 src="images/desktop/avatar-3-2x.jpg"
-                                 alt="Person photo"
-                              />
-                              <div>
-                                 <b class="user__name">Floyd Miles</b>
-                                 <p class="user__position">President of Sales</p>
-                              </div>
-                           </div>
-                        </div>
-                     </li>
-                  </ul>
-
-                  <div class="swiper-button-prev visually-hidden"></div>
-                  <div class="swiper-button-next visually-hidden"></div>
-
-                  <div class="swiper-pagination" id="swiper-pagination"></div>
-               </div>
-            </div>
-         </section>
-
-         <section class="faq section">
-            <div class="container">
-               <h2 class="faq__section-title title">Frequently Asked Question</h2>
-               <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
-               <ul class="faq__list">
-                  <li class="faq__item closed box">
-                     <div>
-                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-
-                        <b class="faq__subtitle text visually-hidden">
-                           Temporibus autem quibusdam et aut ?
-                        </b>
-                        <p class="faq__answer text visually-hidden">
-                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                           praesentium voluptatum deleniti atque.
-                        </p>
-                     </div>
-                     <button class="faq__button" type="button">
-                        <svg class="faq__icon" width="14" height="14">
-                           <use href="./images/sprites/icons.svg#icon-close"></use>
-                        </svg>
-                     </button>
-                  </li>
-                  <li class="faq__item closed box">
-                     <div>
-                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-
-                        <b class="faq__subtitle text visually-hidden">
-                           Temporibus autem quibusdam et aut ?
-                        </b>
-                        <p class="faq__answer text visually-hidden">
-                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                           praesentium voluptatum deleniti atque.
-                        </p>
-                     </div>
-                     <button class="faq__button" type="button">
-                        <svg class="faq__icon" width="14" height="14">
-                           <use href="./images/sprites/icons.svg#icon-close"></use>
-                        </svg>
-                     </button>
-                  </li>
-                  <li class="faq__item closed box">
-                     <div>
-                        <h3 class="faq__title text">Sed ut perspiciatis unde omnis iste natus ?</h3>
-
-                        <b class="faq__subtitle text visually-hidden">
-                           Temporibus autem quibusdam et aut ?
-                        </b>
-                        <p class="faq__answer text visually-hidden">
-                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                           praesentium voluptatum deleniti atque.
-                        </p>
-                     </div>
-                     <button class="faq__button" type="button">
-                        <svg class="faq__icon" width="14" height="14">
-                           <use href="./images/sprites/icons.svg#icon-close"></use>
-                        </svg>
-                     </button>
-                  </li>
-               </ul>
-            </div>
-         </section>
-
          <!-- Mobile menu -->
          <div class="mob-menu visually-hidden">
             <nav>
@@ -215,7 +119,7 @@
                   </li>
                   <li class="mob-menu__item">
                      <p class="mob-menu__text">Nos activités</p>
-                     <div class="pop-up visually-hidden">
+                     <div class="pop-up mob visually-hidden">
                         <ul class="pop-up__list">
                            <li class="pop-up__item">
                               <div>
@@ -261,6 +165,217 @@
                </ul>
             </nav>
          </div>
+
+         <section class="hero">
+            <h1 class="hero__title primary-title">Grow Your Company Faster Than Ever Before</h1>
+            <button class="hero__button" type="button" data-modal-open>
+               <span class="hero__button-text">Contast Us</span>
+            </button>
+         </section>
+
+         <section class="section testimonials">
+            <div class="container">
+               <h2 class="title">Testimonials</h2>
+               <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
+               <div class="swiper">
+                  <ul class="swiper-wrapper testimonials__list">
+                     <li class="swiper-slide testimonials__item">
+                        <div class="testimonials__box border-box">
+                           <p class="testimonials__description text">
+                              Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum
+                              nulla sed consectetur.
+                           </p>
+                           <div class="user-description">
+                              <picture>
+                                 <source
+                                    srcset="
+                                       ./images/desktop/avatar-1.jpg    1x,
+                                       ./images/desktop/avatar-1-2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                 />
+                                 <source
+                                    srcset="
+                                       ./images/mob/avatar-1.jpg    1x,
+                                       ./images/mob/avatar-1-2x.jpg 2x
+                                    "
+                                    media="(min-width: 320px)"
+                                 />
+
+                                 <img
+                                    class="user__photo"
+                                    src="images/desktop/avatar-1.jpg"
+                                    alt="Person photo"
+                                 />
+                              </picture>
+                              <div>
+                                 <b class="user__name">Dianne Russell</b>
+                                 <p class="user__position">Marketing Coordinator</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="swiper-slide testimonials__item">
+                        <div class="testimonials__box border-box">
+                           <p class="testimonials__description text">
+                              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                              accusantium doloremque laudantium.
+                           </p>
+                           <div class="user-description">
+                              <picture>
+                                 <source
+                                    srcset="
+                                       ./images/desktop/avatar-2.jpg    1x,
+                                       ./images/desktop/avatar-2-2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                 />
+                                 <source
+                                    srcset="
+                                       ./images/mob/avatar-2.jpg    1x,
+                                       ./images/mob/avatar-2-2x.jpg 2x
+                                    "
+                                    media="(min-width: 320px)"
+                                 />
+
+                                 <img
+                                    class="user__photo"
+                                    src="images/desktop/avatar-2.jpg"
+                                    alt="Person photo"
+                                 />
+                              </picture>
+                              <div>
+                                 <b class="user__name">Robert Johnson</b>
+                                 <p class="user__position">Graphic Designer</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="swiper-slide testimonials__item">
+                        <div class="testimonials__box border-box">
+                           <p class="testimonials__description text">
+                              Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo
+                              risus, porta ac consectetur ac, vestibulum at eros.
+                           </p>
+                           <div class="user-description">
+                              <picture>
+                                 <source
+                                    srcset="
+                                       ./images/desktop/avatar-3.jpg    1x,
+                                       ./images/desktop/avatar-3-2x.jpg 2x
+                                    "
+                                    media="(min-width: 768px)"
+                                 />
+                                 <source
+                                    srcset="
+                                       ./images/mob/avatar-3.jpg    1x,
+                                       ./images/mob/avatar-3-2x.jpg 2x
+                                    "
+                                    media="(min-width: 320px)"
+                                 />
+
+                                 <img
+                                    class="user__photo"
+                                    src="images/desktop/avatar-3.jpg"
+                                    alt="Person photo"
+                                 />
+                              </picture>
+                              <div>
+                                 <b class="user__name">Floyd Miles</b>
+                                 <p class="user__position">President of Sales</p>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+
+                  <div class="swiper-button-prev swiper-button"></div>
+                  <div class="swiper-button-next swiper-button"></div>
+
+                  <div class="swiper-pagination" id="swiper-pagination"></div>
+               </div>
+            </div>
+         </section>
+
+         <section class="faq section">
+            <div class="container faq__container">
+               <div class="faq__main-content">
+                  <h2 class="faq__section-title title">Frequently Asked Question</h2>
+                  <p class="top-text">Excepteur sint occaecat cupidatat non proident</p>
+                  <ul class="faq__list">
+                     <li class="faq__item closed box">
+                        <div>
+                           <h3 class="faq__title text">
+                              Sed ut perspiciatis unde omnis iste natus ?
+                           </h3>
+
+                           <b class="faq__subtitle text visually-hidden">
+                              Temporibus autem quibusdam et aut ?
+                           </b>
+                           <p class="faq__answer text visually-hidden">
+                              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                              blanditiis praesentium voluptatum deleniti atque.
+                           </p>
+                        </div>
+                        <button class="faq__button" type="button">
+                           <svg class="faq__icon" width="14" height="14">
+                              <use href="./images/sprites/icons.svg#icon-close"></use>
+                           </svg>
+                        </button>
+                     </li>
+                     <li class="faq__item closed box">
+                        <div>
+                           <h3 class="faq__title text">
+                              Sed ut perspiciatis unde omnis iste natus ?
+                           </h3>
+
+                           <b class="faq__subtitle text visually-hidden">
+                              Temporibus autem quibusdam et aut ?
+                           </b>
+                           <p class="faq__answer text visually-hidden">
+                              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                              blanditiis praesentium voluptatum deleniti atque.
+                           </p>
+                        </div>
+                        <button class="faq__button" type="button">
+                           <svg class="faq__icon" width="14" height="14">
+                              <use href="./images/sprites/icons.svg#icon-close"></use>
+                           </svg>
+                        </button>
+                     </li>
+                     <li class="faq__item closed box">
+                        <div>
+                           <h3 class="faq__title text">
+                              Sed ut perspiciatis unde omnis iste natus ?
+                           </h3>
+
+                           <b class="faq__subtitle text visually-hidden">
+                              Temporibus autem quibusdam et aut ?
+                           </b>
+                           <p class="faq__answer text visually-hidden">
+                              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                              blanditiis praesentium voluptatum deleniti atque.
+                           </p>
+                        </div>
+                        <button class="faq__button" type="button">
+                           <svg class="faq__icon" width="14" height="14">
+                              <use href="./images/sprites/icons.svg#icon-close"></use>
+                           </svg>
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               <div class="faq__image-box box">
+                  <picture class="faq__image">
+                     <source
+                        srcset="./images/desktop/saly.png 1x, ./images/desktop/saly-2x.png 2x"
+                        media="(min-width: 768px)"
+                     />
+                     <img src="./images/desktop/saly.png" alt="Person with computer" />
+                  </picture>
+               </div>
+            </div>
+         </section>
 
          <!-- Modal -->
 

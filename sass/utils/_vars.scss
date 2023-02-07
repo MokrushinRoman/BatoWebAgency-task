@@ -1,14 +1,16 @@
 // VARS
 :root {
-    --primary-color: #e75624;
-    --hero-gradient: 90.87deg, #ff6801cc 0.72%, #ff2001cc 99.25%;
-    --box-gradient: 90deg, #ff6800 0%, #ff1f00 100%;
-    --border-box-gradient: 90deg, #ff6800 100%, #ff1f00 100%;
-    --accent-color: #f7cf0d;
-    --navigation-color: #212121;
-    --title-color: #000000;
-    --hero-title-color: #ffffff;
+   --primary-color: #e75624;
+   --hero-gradient: 90.87deg, #ff6801cc 0.72%, #ff2001cc 99.25%;
+   --box-gradient: 90deg, #ff6800 0%, #ff1f00 100%;
+   --border-box-gradient: 90deg, #ff6800 100%, #ff1f00 100%;
+   --navigation-color: #212121;
+   --title-color: #000000;
+   --hero-title-color: #ffffff;
 
-    /* transitions */
-    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   --accent-color: #f7cf0d;
+   --accent-scale: scale(1.05);
+
+   /* transitions */
+   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

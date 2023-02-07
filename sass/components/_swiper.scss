@@ -1,0 +1,37 @@
+.swiper {
+   padding-bottom: 50px;
+   height: 230;
+}
+
+.swiper-slide {
+   padding: 4px;
+}
+
+.swiper-button {
+   display: none;
+   color: var(--primary-color);
+
+   @media screen and (min-width: 1000px) {
+      display: block;
+   }
+}
+
+#swiper-pagination {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#swiper-pagination .swiper-pagination-bullet {
+   width: 12px;
+   height: 12px;
+
+   margin: 0 12px;
+
+   &-active {
+      width: 16px;
+      height: 16px;
+
+      background: linear-gradient(var(--box-gradient));
+   }
+}

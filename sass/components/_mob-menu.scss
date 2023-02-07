@@ -1,6 +1,6 @@
 .mob-menu {
    z-index: 5;
-   @include position($pos: fixed, $t: 52px, $l: 0);
+   @include position($pos: fixed, $t: 50px, $l: 0);
    transform-origin: top center;
    transform: translate(0) scale(1);
    overflow: scroll;
@@ -21,6 +21,10 @@
 
    &.visually-hidden {
       transform: translate(0) scale(0);
+   }
+
+   @media screen and (min-width: 768px) {
+   @include position($pos: fixed, $t: 102px, $l: 0);
    }
 }
 .mob-menu__list {
